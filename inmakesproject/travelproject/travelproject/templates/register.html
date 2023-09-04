@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form action="reg" method="post"> <!--action should be what we give in the url so that the page can redirect-->
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="UserName"><br><br>
+    <input type="text" name="first_name" placeholder="Enter Your Firstname"><br><br>
+    <input type="text" name="last_name" placeholder="Enter Your Lastname"><br><br>
+    <input type="email" name="email" placeholder="Enter Your email id"><br><br>
+    <input type="password" name="password" placeholder="Enter Your Password"><br><br>
+    <input type="password" name="password1" placeholder="Confirm Password"><br><br>
+    <input type="submit">
+
+</form>
+{% for msg in messages %} <!--inorder to print the messages given in the views.py-->
+<h2>{{msg}}</h2>
+{% endfor %}
+
+</body>
+</html>
